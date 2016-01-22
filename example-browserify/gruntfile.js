@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     'browserify': {
       dist: {
         files: {
-          'dist/app.js': ['src/index.js']
+          'dist/bundle.js': ['src/index.js']
         },
         options: {
           watch: true,
