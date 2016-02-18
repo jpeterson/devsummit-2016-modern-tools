@@ -1,0 +1,14 @@
+{
+  "name": "example-npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node .\\node_modules\\traceur\\src\\node\\command.js --out dist\\bundle.js --script src\\app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "traceur": "0.0.102"
+  }
+}
