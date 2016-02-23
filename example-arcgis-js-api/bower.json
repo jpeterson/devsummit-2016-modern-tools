@@ -1,0 +1,10 @@
+{
+  "name": "example-arcgis-js-api",
+  "version": "0.1.0",
+  "dependencies": {
+    "esri": "arcgis-js-api#3.15.0"
+  },
+  "resolutions": {
+    "dojo": "v1.10.4/esri-3.14.0"
+  }
+}
