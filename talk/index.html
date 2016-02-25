@@ -98,19 +98,46 @@
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<p>so the specs are there... are they supported?</p>
-					<p>browser support is getting there, not quite there yet</p>
-					<p>show kangax table, "this talk would not focus on tooling if these were all green"</p>
+					<img src="img/cookie-monster.gif" style="background:none; border:none; box-shadow:none;" />
+
+					<aside class="notes">
+						GAVIN - So the ES6 features are in front of us and we're all excited to use them! But are they all supported? As of today, we cannot use all  ES2015 features out of the box on all browsers.
+					</aside>
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<p>this brings us to the topic at hand... how do we actually do these things today?</p>
-					<p>Transpilers! Babel and Traceur</p>
+					<a href="https://kangax.github.io/compat-table/es6/"><img src="img/compat-table.png"  style="background:none; border:none; box-shadow:none;" /></a>
+					<aside class="notes">
+						The ECMAScript Compatibility Table, a repo published by Juriy Zaytsev on Github, has become the de-facto standard to see where we're at in the browser race to the ES2015 finish line. This talk would not focus on tooling if these were all green - we could just use ES2015 native in the browser!
+					</aside>
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<p>how to integrate transpile process into a modern dev's workflow?</p>
-					<p>Grunt/Gulp/Browserify/Webpack</p>
+					<h2>So how can we use ES2015 <strong>today</strong>?</h2>
+					<div class="fragment">
+						<a href="https://babeljs.io/"><img src="img/babel.png" style="background:none; border:none; box-shadow:none; width: 49%; float: left; margin-top: 15%"/></a>
+						<a href="https://github.com/google/traceur-compiler"><img src="img/traceur.svg" style="background:none; border:none; box-shadow:none;  width: 49%; float: left"/></a>
+						<div style="clear:both"></div>
+					</div>
+					<aside class="notes">
+						Transpilers, short for "source-to-source compiler", are tools that take the source code of a program written in one programming language as its input and produces the equivalent source code in another programming language. So as of today in order to be able to write ES2015 code but have it work on all the browsers out there, we must TRANSPILE our code to the older ES5 standard. We can do that using tools out there. Two of them are Babel and Traceur.
+					</aside>
+				</section>
+
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<h3>Using Transpilers in Your Workflow</h3>
+
+					<table class="reveal centercells noBorder">
+						<tr class="fragment">
+							<td><a href=""><img src="img/browserify.png" style="background:none; border:none; box-shadow:none;max-width: 15vw; max-height: 25vh;"/></a></td>
+							<td><a href=""><img src="img/webpack.png" style="background:none; border:none; box-shadow:none;max-width: 25vw; max-height: 25vh;"/></a></td>
+						</tr>
+						<tr class="fragment">
+							<td><a href=""><img src="img/grunt.png" style="background:none; border:none; box-shadow:none;max-width: 25vw; max-height: 25vh;"/></a></td>
+							<td><a href=""><img src="img/gulp.png" style="background:none; border:none; box-shadow:none;max-width: 25vw; max-height: 25vh;"/></a></td>
+						</tr>
+					</table>
+					<aside class="notes">So our transpilers simply convert our code from ES2015 to ES5 so it will run in all browsers. But as we're writing our code, we probably want to do even more at transpile-time, like packaging our code into a single file. For that, we have two tools at our disposal: Browserify and Webpack.  Browserify lets you use the nodejs require syntax in the browser by bundling up all of your dependencies. Webpack is similar, but it has more features built in, accessed by the "webpack.config.js" file. TODO: GRUNT AND GULP
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
