@@ -172,6 +172,103 @@ function buildName(firstName: string, lastName: string) {
 					</aside>
 				</section>
 
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<h2>Interfaces</h2>
+					<p>DUCK IMAGE</p>
+					<aside class="notes">
+						 One of TypeScript's core principles is that type-checking focuses on the 'shape' that values have. This is called "duck typing", named after the classic expression "If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck." So if Typscript is just looking at the "shape" of values when determining type, naming them would make things easier. That's what interfaces are.
+					</aside>
+				</section>
+
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<h2>Interfaces</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+function greeter(person : {firstname: string, lastname: string}) {
+    return "Hello, " + person.firstname + " " + person.lastname;
+}
+
+var user = {firstname: "Jack", lastname: "Dangermond"};
+
+document.body.innerHTML = greeter(user);
+					</code></pre>
+					<p>Becomes:</p>
+					<pre><code class="hljs" data-trim contenteditable>
+interface Person {
+    firstname: string;
+    lastname: string;
+}
+
+function greeter(person : Person) {
+    return "Hello, " + person.firstname + " " + person.lastname;
+}
+
+var user = {firstname: "Jack", lastname: "Dangermond"};
+
+document.body.innerHTML = greeter(user);
+					</code></pre>
+					<aside class="notes">
+						 INTERFACES
+					</aside>
+				</section>
+
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<h2>Classes</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+class President {
+    fullname : string;
+    constructor(public firstname, public middleinitial, public lastname) {
+        this.fullname = firstname + " " + middleinitial + " " + lastname;
+    }
+}
+
+interface Person {
+    firstname: string;
+    lastname: string;
+}
+
+function greeter(person : Person) {
+    return "Hello, " + person.firstname + " " + person.lastname;
+}
+
+var user = new President("Jack", "A.", "Dangermond");
+
+document.body.innerHTML = greeter(user);
+					</code></pre>
+					<aside class="notes">
+						Classes work much the same as ES2015 classes, but TypeScript allowed their usage much earlier than transpilers caught up to the game. In our class, President, we have a member property, 'fullname', and a constructor. We're referring to the member property using the 'this' keyword inside the constructor. All typical Object Oriented patterns.
+					</aside>
+				</section>
+
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<h2>Inheritance</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+class President {
+    fullname: string;
+    constructor(public name) {
+        this.fullname = name;
+    }
+}
+
+class EsriPresident extends President {
+    constructor(public name, public favoriteMapProjection) {
+        super(name);
+    }
+}
+
+
+function greeter(person: EsriPresident) {
+    return "Hello, " + person.fullname + ". " + person.favoriteMapProjection + " - nice projection!";
+}
+
+var user = new EsriPresident("Jack", "WebMercator");
+
+document.body.innerHTML = greeter(user);
+					</code></pre>
+					<aside class="notes">
+						One of the most fundamental patterns in class-based programming is being able to extend existing classes to create new ones using inheritance. This is done via the "extends" keyword. Let's build some interfaces and classes [DEMO].
+					</aside>
+				</section>
+
 				<section data-background="img/title.png" data-background-size="cover">
 					<h1>Reveal.js</h1>
 					<h3>The HTML Presentation Framework</h3>
