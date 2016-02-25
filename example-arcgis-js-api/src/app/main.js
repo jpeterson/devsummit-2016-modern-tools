@@ -4,8 +4,4 @@ import Map from 'esri/map';
 
 let node = document.getElementById('app-container');
 
-let app;
-
 let map = new Map(node, config.mapOptions);
-
-export default app;
