@@ -1,0 +1,15 @@
+
+/* Common Styles */
+
+button {
+  width: 95px
+}
+
+#input {
+  width: 400px;
+}
+
+#output {
+  height: 300px;
+  width: 500px;
+}
