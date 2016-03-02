@@ -4,5 +4,5 @@ via NPM Scripts:
 
 ```
 npm install
-npm run dev
+npm start
 ```
