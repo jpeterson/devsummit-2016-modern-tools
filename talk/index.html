@@ -13,6 +13,7 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/esri-dev-summit-2016.css" id="theme">
+		<link rel="stylesheet" href="css/Font-Awesome-4.5.0/css/font-awesome.min.css">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/solarized_dark.css">
@@ -43,7 +44,7 @@
 					<h3>for the modern web developer</h3>
 					<p>
 						<small>
-							Josh Peterson <a href="https://twitter.com/jm_peterson">@jm_peterson</a>  &nbsp; /  &nbsp; Gavin Rehkemper <a href="https://twitter.com/gavinr">@gavinr</a>
+							Josh Peterson <a href="https://twitter.com/jm_peterson">@jm_peterson</a>  &nbsp; /  &nbsp; Gavin Rehkemper <a href="https://twitter.com/gavinr">@gavinrehkemper</a>
 						</small>
 					</p>
 				</section>
@@ -98,276 +99,229 @@
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<p>so the specs are there... are they supported?</p>
-					<p>browser support is getting there, not quite there yet</p>
-					<p>show kangax table, "this talk would not focus on tooling if these were all green"</p>
+					<img src="img/cookie-monster.gif" style="background:none; border:none; box-shadow:none;" />
+
+					<aside class="notes">
+						GAVIN - So the ES6 features are in front of us and we're all excited to use them! But are they all supported? As of today, we CAN'T use all  ES2015 features out of the box on all browsers.
+					</aside>
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<p>this brings us to the topic at hand... how do we actually do these things today?</p>
-					<p>Transpilers! Babel and Traceur</p>
+					<a href="https://kangax.github.io/compat-table/es6/"><img src="img/compat-table.png"  style="background:none; border:none; box-shadow:none;" /></a>
+					<aside class="notes">
+						The ECMAScript Compatibility Table, a repository published by Juriy Zaytsev on GitHub, has become the de-facto standard to see where we're at in the browser race to the ES2015 finish line. At the top you can see a quick summary of what what percent ES2015 coverage certain browsers and transpilers have. For example, Babel is at 73%, Traceur is at 60% and my current Browser, Chrome, is at 81%. The lower numbers really illustrate why we're talking about tooling today - likely a lot of the ES2015 code you write will be supported by the latest Chrome or FireFox browsers (they're in the 70s and 80s percent coverage), but if you need your code to work on older browsers - or even IE11 - you need to use a transpiler.
+					</aside>
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<p>how to integrate transpile process into a modern dev's workflow?</p>
-					<p>Grunt/Gulp/Browserify/Webpack</p>
+					<h2>So how can we use ES2015 <strong>today</strong>?</h2>
+					<div class="fragment">
+						<a href="https://babeljs.io/"><img src="img/babel.png" style="background:none; border:none; box-shadow:none; width: 49%; float: left; margin-top: 15%"/></a>
+						<a href="https://github.com/google/traceur-compiler"><img src="img/traceur.svg" style="background:none; border:none; box-shadow:none;  width: 49%; float: left"/></a>
+						<div style="clear:both"></div>
+					</div>
+					<aside class="notes">
+						A transpiler, short for "source-to-source compiler", is a tool that takes the source code of a program written in one programming language as its input and produces the equivalent source code in another programming language. So as of today, to be able to write ES2015 code but have it work on all the browsers out there, we must TRANSPILE our code to the older ES5 standard. We can do that using either of two tools, Babel or Traceur.
+					</aside>
+				</section>
+
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<h3>Using Transpilers in Your Workflow</h3>
+
+					<table class="reveal centercells noBorder">
+						<tr class="fragment">
+							<td><a href=""><img src="img/browserify.png" style="background:none; border:none; box-shadow:none;max-width: 15vw; max-height: 25vh;"/></a></td>
+							<td><a href=""><img src="img/webpack.png" style="background:none; border:none; box-shadow:none;max-width: 25vw; max-height: 25vh;"/></a></td>
+						</tr>
+						<tr class="fragment">
+							<td><a href=""><img src="img/grunt.png" style="background:none; border:none; box-shadow:none;max-width: 25vw; max-height: 25vh;"/></a></td>
+							<td><a href=""><img src="img/gulp.png" style="background:none; border:none; box-shadow:none;max-width: 25vw; max-height: 25vh;"/></a></td>
+						</tr>
+					</table>
+					<aside class="notes">So our transpilers simply convert our code from ES2015 to ES5 so it will run in all browsers. But as we're writing our code, we probably want to do even more at transpile-time, like packaging our code into a single file. For that, we have two tools at our disposal: BROWSERIFY and WEBPACK. [ARROW]  Browserify lets you use "nodejs require" syntax in the browser by bundling up all of your dependencies. Webpack is similar, but it has more features built in, accessed by the "webpack.config" file. .... [ARROW] Grunt and Gulp are task runners - they will allow us to call Browserify or Webpack wtih Babel in the correct order. Grunt and Gulp are similar to each other, but Gulp is focused on tasks as "Node.js streams," where Grunt is a bit more widely used and has more community support (of course, depending on who you talk to). Not using a task runner and just using NPM's Package.json to do any build tasks that you need to do is also becoming a popular paradigm. You can basically use Webpack and Browserify along with NPM, Grunt, or Gulp in any combination. We're going to show you a few examples now.
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
 					<p>demo demo demo</p>
 				</section>
 
-				<section data-background="img/title.png" data-background-size="cover">
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
-
-				<section data-background="img/bg-1.png" data-background-size="cover">
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section data-background="img/bg-2.png" data-background-size="cover">
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-
-					<section data-background="img/bg-3.png" data-background-size="cover">
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-
-					<section data-background="img/bg-5.png" data-background-size="cover">
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section data-background="img/bg-5.png" data-background-size="cover">
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section data-background="img/bg-6.png" data-background-size="cover">
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section data-background="img/bg-7.png" data-background-size="cover">
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown data-background="img/bg-1.png" data-background-size="cover">
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section data-background="img/bg-2.png" data-background-size="cover">
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-
-					<section data-background="img/bg-3.png" data-background-size="cover">
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section data-background="img/bg-4.png" data-background-size="cover">
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section data-background="img/bg-5.png" data-background-size="cover">
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section data-background="img/bg-6.png" data-background-size="cover">
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section data-background="img/bg-7.png" data-background-size="cover">
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section data-background="img/bg-1.png" data-background-size="cover">
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section data-background="img/bg-2.png" data-background-size="cover">
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section data-background="img/bg-3.png" data-background-size="cover">
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
+				<section data-background="#ffffff" data-background-size="cover">
+					<svg version="1.1" id="logo-typescript" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.09 69.57">
+					  <g fill="#007ACC">
+					    <path d="M34.98 7.56H20.43v45.07h-5.91V7.56H0V2.21h34.98V7.56z"/>
+					    <path d="M57.94 16.63L41.38 58.39c-2.95 7.45-7.1 11.18-12.45 11.18 -1.5 0-2.75-0.15-3.76-0.46v-5.17c1.24 0.42 2.38 0.63 3.41 0.63 2.91 0 5.09-1.73 6.54-5.2l2.88-6.82L23.94 16.63h6.4l9.74 27.7c0.12 0.35 0.36 1.27 0.74 2.74h0.21c0.12-0.56 0.35-1.45 0.7-2.67l10.23-27.77H57.94z"/>
+					    <path d="M67.37 47.43h-0.14v21.76h-5.77V16.63h5.77v6.33h0.14c2.84-4.78 6.98-7.17 12.45-7.17 4.64 0 8.26 1.61 10.86 4.83 2.6 3.22 3.9 7.54 3.9 12.96 0 6.02-1.46 10.85-4.39 14.47 -2.93 3.62-6.94 5.43-12.02 5.43C73.5 53.47 69.9 51.46 67.37 47.43zM67.23 32.91v5.03c0 2.98 0.97 5.5 2.9 7.58s4.39 3.11 7.37 3.11c3.49 0 6.23-1.34 8.21-4.01 1.98-2.67 2.97-6.39 2.97-11.14 0-4.01-0.93-7.15-2.78-9.42 -1.85-2.27-4.36-3.41-7.52-3.41 -3.35 0-6.05 1.17-8.09 3.5C68.25 26.47 67.23 29.39 67.23 32.91z"/>
+					    <path d="M129.56 36.07h-25.42c0.09 4.01 1.17 7.1 3.23 9.28 2.06 2.18 4.9 3.27 8.51 3.27 4.05 0 7.78-1.34 11.18-4.01v5.41c-3.16 2.3-7.35 3.45-12.55 3.45 -5.09 0-9.08-1.63-11.99-4.9 -2.91-3.27-4.36-7.87-4.36-13.8 0-5.6 1.59-10.17 4.76-13.69 3.18-3.53 7.12-5.29 11.83-5.29s8.35 1.52 10.93 4.57c2.58 3.05 3.87 7.28 3.87 12.69V36.07zM123.65 31.18c-0.02-3.33-0.83-5.92-2.41-7.77 -1.58-1.85-3.78-2.78-6.59-2.78 -2.72 0-5.03 0.97-6.93 2.92 -1.9 1.95-3.07 4.49-3.52 7.63H123.65z"/>
+					    <path d="M134.6 50.59v-6.96c0.73 0.7 1.6 1.34 2.62 1.9 1.02 0.56 2.09 1.04 3.22 1.42s2.26 0.69 3.39 0.9c1.14 0.21 2.19 0.32 3.15 0.32 3.32 0 5.81-0.67 7.45-2.02 1.64-1.35 2.46-3.29 2.46-5.82 0-1.36-0.27-2.54-0.82-3.55 -0.55-1.01-1.3-1.93-2.27-2.76s-2.11-1.63-3.43-2.39c-1.32-0.76-2.74-1.56-4.26-2.41 -1.61-0.89-3.11-1.79-4.5-2.71 -1.39-0.91-2.61-1.92-3.63-3.02 -1.03-1.1-1.84-2.35-2.43-3.74 -0.59-1.39-0.88-3.03-0.88-4.9 0-2.3 0.46-4.29 1.38-5.99 0.92-1.7 2.13-3.1 3.64-4.2 1.5-1.1 3.21-1.92 5.13-2.46 1.92-0.54 3.88-0.81 5.87-0.81 4.55 0 7.86 0.6 9.94 1.79v6.64c-2.72-2.06-6.22-3.09-10.49-3.09 -1.18 0-2.36 0.14-3.54 0.4 -1.18 0.27-2.23 0.71-3.15 1.32 -0.92 0.61-1.67 1.39-2.25 2.36 -0.58 0.96-0.87 2.13-0.87 3.52 0 1.29 0.22 2.4 0.66 3.34 0.44 0.94 1.09 1.79 1.95 2.57 0.86 0.77 1.9 1.52 3.14 2.25 1.23 0.73 2.65 1.52 4.26 2.39 1.65 0.89 3.22 1.83 4.7 2.81s2.78 2.07 3.89 3.27c1.11 1.2 2 2.52 2.65 3.97 0.65 1.45 0.98 3.12 0.98 4.99 0 2.48-0.45 4.59-1.33 6.31 -0.89 1.72-2.09 3.12-3.6 4.2 -1.51 1.08-3.25 1.86-5.23 2.34 -1.97 0.48-4.05 0.72-6.24 0.72 -0.73 0-1.63-0.06-2.7-0.19s-2.17-0.32-3.28-0.56c-1.12-0.25-2.17-0.55-3.17-0.91C136 51.44 135.21 51.03 134.6 50.59z"/>
+					    <path d="M193.25 50.98c-2.77 1.66-6.05 2.5-9.84 2.5 -5.13 0-9.28-1.67-12.43-5.01s-4.73-7.67-4.73-12.99c0-5.93 1.7-10.69 5.1-14.29 3.4-3.6 7.93-5.4 13.61-5.4 3.16 0 5.95 0.59 8.37 1.76v5.91c-2.67-1.88-5.53-2.81-8.58-2.81 -3.68 0-6.7 1.32-9.05 3.96s-3.53 6.1-3.53 10.39c0 4.22 1.11 7.55 3.32 9.98s5.19 3.66 8.91 3.66c3.14 0 6.09-1.04 8.86-3.13V50.98z"/>
+					    <path d="M215.56 22.46c-1.01-0.77-2.46-1.16-4.36-1.16 -2.46 0-4.52 1.16-6.17 3.48s-2.48 5.48-2.48 9.49v18.35h-5.77v-36h5.77v7.42h0.14c0.82-2.53 2.07-4.51 3.76-5.92 1.69-1.42 3.57-2.13 5.66-2.13 1.5 0 2.65 0.16 3.45 0.49V22.46z"/>
+					    <path d="M222.18 7.49c-1.03 0-1.91-0.35-2.64-1.05s-1.09-1.59-1.09-2.67c0-1.08 0.36-1.97 1.09-2.69 0.73-0.71 1.61-1.07 2.64-1.07 1.05 0 1.95 0.36 2.69 1.07 0.74 0.72 1.11 1.61 1.11 2.69 0 1.03-0.37 1.91-1.11 2.64C224.13 7.12 223.23 7.49 222.18 7.49zM224.99 52.63h-5.77v-36h5.77V52.63z"/>
+					    <path d="M234.29 47.43h-0.14v21.76h-5.77V16.63h5.77v6.33h0.14c2.84-4.78 6.98-7.17 12.45-7.17 4.64 0 8.26 1.61 10.86 4.83 2.6 3.22 3.9 7.54 3.9 12.96 0 6.02-1.46 10.85-4.39 14.47s-6.94 5.43-12.02 5.43C240.42 53.47 236.82 51.46 234.29 47.43zM234.15 32.91v5.03c0 2.98 0.97 5.5 2.9 7.58s4.39 3.11 7.37 3.11c3.49 0 6.23-1.34 8.21-4.01s2.97-6.39 2.97-11.14c0-4.01-0.93-7.15-2.78-9.42 -1.85-2.27-4.36-3.41-7.52-3.41 -3.35 0-6.05 1.17-8.09 3.5C235.17 26.47 234.15 29.39 234.15 32.91z"/>
+					    <path d="M283.09 52.28c-1.36 0.75-3.15 1.12-5.38 1.12 -6.3 0-9.46-3.52-9.46-10.55v-21.3h-6.19v-4.92h6.19V7.84l5.77-1.86v10.65h9.07v4.92h-9.07v20.28c0 2.41 0.41 4.14 1.23 5.17s2.18 1.55 4.08 1.55c1.45 0 2.71-0.4 3.76-1.2V52.28z"/>
+					  </g>
+					</svg>
 					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+						Typescript is a superset of JavaScript, providing features on top of JavaScript that can help you code more efficiently. Typescript has been around for a few years, and in the early days was a competitor to Google Dart. Google Dart was going to be a NEW web programming language though, where Typescript took a less radical approach than dart - to be totally compatible with plain JavaScript out-of-the-box, and that has been one of the main reasons it has won out in popularity.
+					</aside>
+				</section>
+
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<p>
+						<img src="img/sitepen.png"  style="background:white; border:none; box-shadow:none;padding:10px; vertical-align: middle;margin-right: 20px;" />
+						<img src="img/angular-logo.png"  style="background:none; border:none; box-shadow:none; width: 250px; vertical-align: middle;" />
+					</p>
+					<aside class="notes">
+						Many projects and companies are using Typescript. Sitepen is using Typescript to develop Dojo 2, the new version of Dojo. This doesn't mean you must develop your applications in Typescript -- simply that they are writing the underlying toolkit code in Typescript. AngularJS, a popular JavaScript Framework, has chosen to focus on Typescript for Angular 2, which is currently in beta and will be out soon - so unlike Dojo, if you're going to use Angualar2, you pretty much need to be using Typescript in your applications.
 					</aside>
 				</section>
 
 				<section data-background="img/bg-4.png" data-background-size="cover">
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+					<h1>TypeScript Features</h1>
+					<aside class="notes">
+						Now I'll now go through a few of the features of TypeScript, so you can see what is so great about it!
+					</aside>
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent" data-background="img/bg-6.png" data-background-size="cover">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
+					<h2>Type Annotations</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+function buildName(firstName, lastName) {
+    return firstName + " " + lastName;
+}
 					</code></pre>
+					<p>Becomes:</p>
+					<pre><code class="hljs" data-trim contenteditable>
+function buildName(firstName: string, lastName: string) {
+    return firstName + " " + lastName;
+}
+					</code></pre>
+					<aside class="notes">
+						 All of the ES2015 code styles we've been showing so far still apply in the TypeScript world. But you can add things that help you be more efficient. One example is type annotations on functions. This is actually where TypeScript gets its name - we're taking JavaScript, a language where variable and function return types are NOT declared, and we're adding TYPES. The compiler enforces the types that you set. The syntax is quite simple - you can see in this example, you just put a colon after the function argument name, and define what type it is. The types that TypeScript support include all the JavaScript types, plus enum, "any", and void. Let's see these types in action [DEMO].
+					</aside>
 				</section>
 
-				<section data-background="img/bg-7.png" data-background-size="cover">
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<h2>Interfaces</h2>
+					<p><img src="img/duck.png" style="background:none; border:none; box-shadow:none;" /></p>
+					<aside class="notes">
+						 One of TypeScript's core principles is that type-checking focuses on the 'shape' that values have. This is called "duck typing", named after the classic expression "If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck." So if Typscript is just looking at the "shape" of values when determining type, naming them would make things easier. That's what interfaces are.
+						 <br /><br />image via https://pixabay.com/en/bath-duck-rubber-duckies-duck-199927/
+					</aside>
 				</section>
 
-				<section data-background="img/bg-1.png" data-background-size="cover">
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<h2>Interfaces</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+function greeter(person : {firstname: string, lastname: string}) {
+    return "Hello, " + person.firstname + " " + person.lastname;
+}
+
+var user = {firstname: "Jack", lastname: "Dangermond"};
+
+document.body.innerHTML = greeter(user);
+					</code></pre>
+					<p>Becomes:</p>
+					<pre><code class="hljs" data-trim contenteditable>
+interface Person {
+    firstname: string;
+    lastname: string;
+}
+
+function greeter(person : Person) {
+    return "Hello, " + person.firstname + " " + person.lastname;
+}
+
+var user = {firstname: "Jack", lastname: "Dangermond"};
+
+document.body.innerHTML = greeter(user);
+					</code></pre>
+					<aside class="notes">
+						 In this example, if you look at the very first line, we have a function, "greeter", that takes a single parameter, "person", which is an object that has a few properties in it. Because we're in TypeScript, if you tried to call this function with an object that didn't match those properties (firstname and lastname), the compiler would give you an error. To make our code more reusbable and readable, let's turn that parameter into an interface. In the second code block, you see that we are defining an interface using the "interface" keyword, calling it "Person" and defining our object. Then in our function definition instead of putting the full object in the parameters list, we can just put the name of our interface. So clean!
+					</aside>
+				</section>
+
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<h2>Classes</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+class President {
+    fullname : string;
+    constructor(public firstname, public middleinitial, public lastname) {
+        this.fullname = firstname + " " + middleinitial + " " + lastname;
+    }
+}
+
+interface Person {
+    firstname: string;
+    lastname: string;
+}
+
+function greeter(person : Person) {
+    return "Hello, " + person.firstname + " " + person.lastname;
+}
+
+var user = new President("Jack", "A.", "Dangermond");
+
+document.body.innerHTML = greeter(user);
+					</code></pre>
+					<aside class="notes">
+						Classes work much the same as ES2015 classes, but TypeScript allowed their usage much earlier than transpilers caught up to the game. In this example, in our class, President, we have a member property, 'fullname', and a constructor. We're referring to the member property using the 'this' keyword inside the constructor. These are all typical Object Oriented patterns.
+					</aside>
+				</section>
+
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<h2>Inheritance</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+class President {
+    fullname: string;
+    constructor(public name) {
+        this.fullname = name;
+    }
+}
+
+class EsriPresident extends President {
+    constructor(public name, public favoriteMapProjection) {
+        super(name);
+    }
+}
+
+
+function greeter(person: EsriPresident) {
+    return "Hello, " + person.fullname + ". " + person.favoriteMapProjection + " - nice projection!";
+}
+
+var user = new EsriPresident("Jack", "WebMercator");
+
+document.body.innerHTML = greeter(user);
+					</code></pre>
+					<aside class="notes">
+						One of the most fundamental patterns in class-based programming is being able to extend existing classes to create new ones using inheritance. In TypeScript, this is done via the "extends" keyword. In this example we have a class, President, and a class that extends that class, EsriPresident.  This class does everything that the original does, except it also takes a "favorite map projection". Now in the code below, we can use the property from the based class (fullname) and the property from the extended class (favoriteMapProjection). .... Now lets see a quick demo of Classes and Inheritance in TypeScript in action.
+					</aside>
+				</section>
+
+				<section data-background="img/bg-4.png" data-background-size="cover">
+					<h1>Conclusion</h1>
+				</section>
+
+				<!--  							-->
+				<!-- 		THANK YOU		-->
+				<!--  							-->
+				<section data-background="img/bg-2.png" data-background-size="cover">
+					<h1>Thank you!</h1>
+					<div style="width:50%; float: left;">
+						<p>
+							<h3>Josh Peterson</h3>
+							<a href="https://github.com/jpeterson"><i class="fa fa-github" title="GitHub"></i>/jpeterson</a><br>
+							<a href="https://twitter.com/jm_peterson"><i class="fa fa-twitter" title="Twitter"></i>/jm_peterson</a>
+						</p>
+					</div>
+					<div style="width:50%; float: left;">
+						<p>
+							<h3>Gavin Rehkemper</h3>
+							<a href="https://github.com/gavinr"><i class="fa fa-github" title="GitHub"></i>/gavinr</a><br>
+							<a href="https://twitter.com/gavinrehkemper"><i class="fa fa-twitter" title="Twitter"></i>/gavinrehkemper</a>
+						</p>
+					</div>
+					<p>Please rate this session:<br><a href="TODO" target="_blank">TODO</a></p>
 				</section>
 
 				<section data-background="img/end.png" data-background-size="cover"></section>
