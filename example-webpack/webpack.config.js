@@ -5,13 +5,9 @@ module.exports = {
     filename: './dist/bundle.js'
   },
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loader: 'babel-loader',
-      query: {
-        presets: ['es2015']
-      }
-    }]
+    loaders: [
+      { test: /\.js$/, loader: 'babel-loader' }
+    ]
   },
   resolve: {
     // you can now require('file') instead of require('file.js')
