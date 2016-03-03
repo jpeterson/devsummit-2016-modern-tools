@@ -16,4 +16,12 @@
     }
   }
 
+  section {
+    img.noBorder {
+      border: 0px;
+      background: transparent;
+      box-shadow: none;
+    }
+  }
+
 }
