@@ -11,7 +11,7 @@ function makeRequest(params) {
         resolve(response);
       },
       error: (xhr, status, error) => {
-        reject(error);
+        reject(xhr.responseText);
       }
     });
   });
