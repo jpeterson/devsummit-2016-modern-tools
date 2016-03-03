@@ -1,5 +1,5 @@
 var myAdd = function(x: number, y: number): string {
-  return String(x + y);
+  return x + y;
 };
 
-document.body.innerHTML = myAdd(1, 2);
+document.body.innerHTML = String(myAdd(1, 2));
