@@ -1,10 +1,12 @@
 {
+	 "buildOnSave": true,
     "compilerOptions": {
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "module": "amd",
         "target": "ES5",
         "outDir": "dist",
-        "rootDir": "src"
+        "rootDir": "src",
+        "watch": true
     }
 }
