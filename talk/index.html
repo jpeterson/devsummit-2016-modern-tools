@@ -70,7 +70,7 @@
 				</section>
 
 				<section data-background="img/bg-1.png" data-background-size="cover">
-					<h3>First, some terms</h3>
+					<h3>First, some definitions:</h3>
 					<dl>
 							<dt>ECMAScript</dt>
 							<dd>"The Language of the Web" (specification implemented by JS)</dd>
@@ -138,6 +138,39 @@
 					</aside>
 				</section>
 
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<img src="img/ember.png" style="background:none; border:none; box-shadow:none;height:150px" />
+					<p>Ember's approach to ES2015 (use modules)</p>
+					<img width="1000px" src="img/ember-classes.png" style="background:none; border:none; box-shadow:none;" />
+					<small><a href="https://guides.emberjs.com/v2.0.0/controllers/">https://guides.emberjs.com/v2.0.0/controllers/</a></small>
+
+					<aside class="notes">
+						Ember uses ES2015 import/export, but still has its own mechanism for creating classes
+					</aside>
+				</section>
+
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<img src="img/react.png" style="background:none; border:none; box-shadow:none;height:150px" />
+					<p>React's approach to ES2015 (use modules + classes)</p>
+					<img width="1000px" src="img/react-classes.png" />
+					<small><a href="https://facebook.github.io/react/docs/reusable-components.html#es6-classes">https://facebook.github.io/react/docs/reusable-components.html#es6-classes</a></small>
+
+					<aside class="notes">
+						React not only uses import/export, but also supports native ES2015 classes
+					</aside>
+				</section>
+
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<img src="img/react.png" style="background:none; border:none; box-shadow:none;height:150px" />
+					<p>React's philosophy</p>
+					<img width="1000px" src="img/react-es6.png" />
+					<small><a href="https://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html#plain-javascript-classes">https://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html#plain-javascript-classes</a></small>
+
+					<aside class="notes">
+						Maybe more important than a code snippet is React's philosophy with regard to "Idiomatic JS", aka native JS
+					</aside>
+				</section>
+
 				<section data-background="img/bg-1.png" data-background-size="cover">
 					<h2>What can ES2015 do for me?</h2>
 				</section>
@@ -176,7 +209,7 @@ var p = new Person();
 				<section data-background="img/bg-5.png" data-background-size="cover">
 					<p>Promises + Arrow Functions = Syntactical Awesomeness</p>
 					<pre><code data-trim>
-makeRequest() {
+function makeRequest() {
   return new Promise((resolve, reject) => {
     $.ajax('config.json', {
       success: (data, status, xhr) => {
@@ -287,12 +320,10 @@ alert("2π = " + sum(pi, pi));
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<p>demo demo demo</p>
-				</section>
-
-				<section data-background="img/bg-5.png" data-background-size="cover">
-					<p>advanced webpack demo</p>
-					<p>.eslintrc: teach it es6 by using babel-eslint parser</p>
+					<h1>demo</h1>
+					<aside class="notes">
+						remember to include in webpack demo... ".eslintrc: teach it es6 by using babel-eslint parser"
+					</aside>
 				</section>
 
 				<section data-background="#ffffff" data-background-size="cover">

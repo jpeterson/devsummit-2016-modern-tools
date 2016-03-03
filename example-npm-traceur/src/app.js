@@ -4,6 +4,6 @@ class App {
   }
 
   sayHello(person) {
-    return 'Whats up ' + person + '! My name is ' + this.name;
+    return `Whats up ${person}! My name is ${this.name}`;
   }
 }

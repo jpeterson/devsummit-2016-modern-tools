@@ -4,8 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {
-    "jquery": "^2.2.1",
-    "xhr": "^2.2.0"
+    "jquery": "^2.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.3",

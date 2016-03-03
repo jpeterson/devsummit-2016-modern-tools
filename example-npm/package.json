@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel src/index.js --watch --out-file dist/bundle.js"
+    "start": "babel src/app.js --watch --out-file dist/app.js"
   },
   "author": "",
   "license": "ISC",

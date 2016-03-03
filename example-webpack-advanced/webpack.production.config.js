@@ -1,17 +1,22 @@
-/* eslint object-shorthand: 0, func-names: 0 */
+/* eslint-env es6:false */
 
 // webpack.production.config.js PRODUCTION
 
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const calc = require('postcss-calc');
+const colorFunction = require('postcss-color-function');
 
 module.exports = {
   entry: {
     app: './src/index.js',
-    vendors: ['react']
+    vendors: ['jquery']
   },
   output: {
-    path: './dist'
+    path: path.resolve(__dirname, 'prod'),
+    filename: 'app.js'
   },
   module: {
     loaders: [{
@@ -22,6 +27,9 @@ module.exports = {
         compact: true,
         comments: false
       }
+    }, {
+      test: /\.html$/,
+      loader: 'file?name=[name].[ext]'
     }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader!postcss-loader'
@@ -37,7 +45,7 @@ module.exports = {
 
     // Build an 'index.html' file in /prod (using a template)
     new HtmlWebpackPlugin({
-      title: 'App Title',
+      title: 'ES2015 + Webpack (advanced)',
       template: 'index.ejs', // Load a custom template
       inject: 'body'
     })
@@ -45,8 +53,9 @@ module.exports = {
 
   // Process CSS
   postcss: function () {
-    return [require('postcss-calc'), require('postcss-color-function'), require('autoprefixer')];
+    return [calc, colorFunction, autoprefixer({ browsers: ['last 2 versions'] })];
   },
+
   resolve: {
     // you can now require('file') instead of require('file.js')
     extensions: ['', '.js', '.json']

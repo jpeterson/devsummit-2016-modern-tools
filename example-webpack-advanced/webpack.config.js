@@ -1,4 +1,8 @@
-/* eslint object-shorthand: 0, func-names: 0 */
+/* eslint-env es6:false */
+
+const autoprefixer = require('autoprefixer');
+const calc = require('postcss-calc');
+const colorFunction = require('postcss-color-function');
 
 // webpack.config.js
 module.exports = {
@@ -21,7 +25,7 @@ module.exports = {
 
   // Process CSS
   postcss: function () {
-    return [require('postcss-calc'), require('postcss-color-function'), require('autoprefixer')];
+    return [calc, colorFunction, autoprefixer({ browsers: ['last 2 versions'] })];
   },
 
   resolve: {
