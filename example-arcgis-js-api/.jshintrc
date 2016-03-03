@@ -1,0 +1,39 @@
+// For more info on any of these rules, see http://jshint.com/docs/options/
+{
+  // Environment
+  "browser": true,
+  "dojo": true,
+  "debug": true,
+  "devel": true,
+  "globals": {
+    "_": false,
+    "define": false,
+    "require": false
+  },
+  "jquery": false,
+
+  //Enforce
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": true,
+  "es3": false,
+  "forin": true,
+  "funcscope": false,
+  // "immed": true, // (deprecated - moved to jscs)
+  // "indent": 2, // (deprecated - moved to jscs)
+  "latedef": true,
+  "maxparams": false,
+  // "newcap": true, // (deprecated - moved to jscs)
+  "noarg": true,
+  "nonew": true,
+  // "quotmark": true, // (deprecated - moved to jscs)
+  "shadow": false,
+  "strict": false,
+  "undef": true,
+  "unused": "vars",
+
+  // Relax
+  "esnext": true,
+  "evil": false
+  // "sub": false // (deprecated - moved to jscs)
+}
