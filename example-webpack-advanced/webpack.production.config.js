@@ -1,4 +1,4 @@
-/* eslint object-shorthand: 0, func-names: 0 */
+/* eslint-env es6:false */
 
 // webpack.production.config.js PRODUCTION
 
