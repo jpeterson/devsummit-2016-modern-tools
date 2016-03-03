@@ -49,54 +49,199 @@
 					</p>
 				</section>
 
-				<section data-background="img/bg-1.png" data-background-size="cover">
-					<h2>ES2015</h2>
-					<ul>
-						<li><h4>why it's important</h4>
-						<li><h4>why you should use it</h4>
-						<li><h4>how you can use it today</h4>
-						<li><h4><span style="text-decoration: line-through">what you can do with it</span> (go here?)</h4>
-					</ul>
+				<section data-background="img/bg-4.png" data-background-size="cover">
+					<div class="slide-topic dark">Topics</div>
+					<h1>ES2015</h1>
+					<h3>what it is and why it's important</h3>
+					<h3>what you can do with it</h3>
+					<h3>how you can use it today</h3>
+				</section>
+
+				<section data-background="img/bg-4.png" data-background-size="cover">
+					<div class="slide-topic dark">Topics</div>
+					<h1>TypeScript</h1>
+					<h3>...</h3>
+					<h3>...</h3>
+					<h3>...</h3>
+				</section>
+
+				<section data-background="img/bg-2.png" data-background-size="cover">
+					<h1>ES2015</h1>
 				</section>
 
 				<section data-background="img/bg-1.png" data-background-size="cover">
-					<h2>Why ES2015 is important</h2>
-					<p>
-						JS is the language of the web. It is important to know the language,
-						not just abstractions (libraries/frameworks).
-					</p>
-					<p>
-						As JS becomes more powerful, it becomes more prevalent. Libraries and
-						frameworks have less utility methods - rely on plain JS.
-					</p>
-					<p>
-						Look at the history of web technologies
-					</p>
+					<h3>First, some terms</h3>
+					<dl>
+							<dt>ECMAScript</dt>
+							<dd>"The Language of the Web" (specification implemented by JS)</dd>
+
+							<dt>ES2015 / ES6 / ESHarmony</dt>
+							<dd>The 6th and current version of ECMAScript</dd>
+					</dl>
+
+					<aside class="notes">
+						<p>566 pg ECMAScript languag spec: http://www.ecma-international.org/ecma-262/6.0/ECMA-262.pdf</p>
+					</aside>
+				</section>
+
+				<section data-background="img/bg-1.png" data-background-size="cover">
+					<h2>Why ES2015 is important?</h2>
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<img src="img/timeline.jpg" />
-					<p>sweet timeline goes here (add esri web stuffs)</p>
-					<p>come back to it, but focus on individual segments after talking about them</p>
+					<p>JS is the language of the web</p>
+					<p>As JS becomes more powerful, frameworks become leaner</p>
+					<p>The history of web technology points to JS</p>
+
+					<aside class="notes">
+						<p>JS isn't going anywhere anytime soon</p>
+						<p>It is important to know the language - not just abstractions (libs/frameworks)</p>
+						<p>Libs/frameworks rely more and more on plain JS.</p>
+					</aside>
+				</section>
+
+				<section data-background="img/web-timeline-01.png" data-background-transition="slide-in none" data-background-size="cover" data-transition="slide-in fade-out">
+					<aside class="notes">
+						<p>A history of web technology (1995 - present)</p>
+						<p>We want to look at how far the web has come in 20 years</p>
+						<p>Let's focus in on a few of these segments</p>
+
+					</aside>
+				</section>
+
+				<section data-background="img/web-timeline-02.png" data-background-transition="none" data-background-size="cover" data-transition="none fade-out">
+					<aside class="notes">
+						<p>The web browser has become a mature platform.</p>
+						<p>Browsers are getting more powerful (differentiate between "web" and "browsers" [i.e. front-end])</p>
+						<p>Graphics and display</p>
+						<p>Data storage and manipulation</p>
+						<p>Indications of a mature platform</p>
+					</aside>
+				</section>
+
+				<section data-background="img/web-timeline-03.png" data-background-transition="none" data-background-size="cover" data-transition="none fade-out">
+					<aside class="notes">
+						<p>The increasing power in browsers makes plugin-based tech obsolete</p>
+						<p>Why did these exist?</p>
+						<p>Writing was on the wall as far back as 2010 (Tobias Schneider's (now at Spotify) "Gordon")
+							<a href="https://github.com/tobytailor/gordon/wiki" target="_blank">link</a>
+						</p>
+					</aside>
+				</section>
+
+				<section data-background="img/web-timeline-04.png" data-background-transition="none" data-background-size="cover" data-transition="none slide-out">
+					<aside class="notes">
+						<p>Talks to how the JS community has evolved and reacted to a changing platform</p>
+						<p>Evolution of js frameworks and libraries (previously intended to fill language/platform gaps, now more focused, expect dev to leverage powerful language features)</p>
+						<p>dojo/jquery/mootools focused on providing utilities, angular/ember/react focus on app architecture and leverage es2015/TS</p>
+						<p>CoffeeScript is an interesting case - attempt at "smarter" js via transpilation, influenced ES Harmony</p>
+					</aside>
+				</section>
+
+				<section data-background="img/bg-1.png" data-background-size="cover">
+					<h2>What can ES2015 do for me?</h2>
+				</section>
+
+				<section data-background="img/bg-1.png" data-background-size="cover">
+					<h3>A few of my favorite (ES2015) things...</h3>
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<p>power to the browsers!</p>
-					<p>show timeline focused on browser spec improvements</p>
-					<p>browsers getting more powerful, more features, less need for plugins</p>
+					<p>Arrow Functions</p>
+					<div style="text-align:left">ES5</div>
+					<pre><code data-trim>
+function Person() {
+  var self = this; // might also dojo/_base/lang or $.proxy
+  self.age = 0;
+
+  setInterval(function growUp() {
+    self.age++;
+  }, 1000);
+}
+					</code></pre>
+					<div style="text-align:left">ES2015</div>
+					<pre><code data-trim>
+function Person(){
+  this.age = 0;
+
+  setInterval(() => {
+    this.age++; // `this` refers to Person
+  }, 1000);
+}
+
+var p = new Person();
+					</code></pre>
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<p>death to the pretenders!</p>
-					<p>show timeline focused on non-js plugin-based tech</p>
-					<p>rise of browsers makes plugins unnecessary</p>
+					<p>Promises + Arrow Functions = Syntactical Awesomeness</p>
+					<pre><code data-trim>
+makeRequest() {
+  return new Promise((resolve, reject) => {
+    $.ajax('config.json', {
+      success: (data, status, xhr) => {
+        resolve(data);
+      },
+      error: (xhr, status, error) => {
+        reject(error);
+      }
+    });
+  });
+}
+
+makeRequest.then(response => {
+  return response;
+})
+					</code></pre>
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<p>evolution of js frameworks and libraries (previously intended to fill language gaps, now more focused, expect dev to leverage powerful language features)</p>
-					<p>show timeline focused on js frameworks</p>
-					<p>dojo/jquery/mootools focused on providing utilities, angular/ember/react focus on app architecture and leverage es2015/TS</p>
+					<p>Template Strings</p>
+					<pre><code data-trim>
+sayHello(person) {
+  return `Whats up ${person}!`;
+}
+
+let comment = `In ES2015 this is
+totally legal!`
+					</code></pre>
 				</section>
+
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<p>Modules</p>
+					<pre><code data-trim>
+//
+// lib/math.js
+//
+export function sum(x, y) {
+  return x + y;
+}
+export var pi = 3.141593;
+
+//
+// app.js
+//
+import * as math from "lib/math";
+alert("2π = " + math.sum(math.pi, math.pi));
+
+//
+// otherApp.js
+//
+import {sum, pi} from "lib/math";
+alert("2π = " + sum(pi, pi));
+					</code></pre>
+				</section>
+
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<p>But wait, there's more!</p>
+					<iframe height="548px" width="1000px" src="https://babeljs.io/docs/learn-es2015/"></iframe>
+
+					<aside class="notes">
+						This is a great place to familiarize yourself with the new features of ES2015.
+					</aside>
+				</section>
+
+
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
 					<img src="img/cookie-monster.gif" style="background:none; border:none; box-shadow:none;" />
@@ -143,6 +288,11 @@
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
 					<p>demo demo demo</p>
+				</section>
+
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<p>advanced webpack demo</p>
+					<p>.eslintrc: teach it es6 by using babel-eslint parser</p>
 				</section>
 
 				<section data-background="#ffffff" data-background-size="cover">
@@ -343,7 +493,9 @@ document.body.innerHTML = greeter(user);
 				history: true,
 				center: true,
 
+
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				backgroundTransition: 'slide',
 
 				// Optional reveal.js plugins
 				dependencies: [
