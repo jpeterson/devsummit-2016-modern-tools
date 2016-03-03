@@ -1308,3 +1308,8 @@ html:-moz-full-screen-ancestor {
   .reveal .slide-topic.dark {
     border-bottom: 2px solid #ddd;
     color: #ddd; }
+
+.reveal section img.noBorder {
+  border: 0px;
+  background: transparent;
+  box-shadow: none; }

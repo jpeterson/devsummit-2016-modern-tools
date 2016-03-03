@@ -60,9 +60,9 @@
 				<section data-background="img/bg-4.png" data-background-size="cover">
 					<div class="slide-topic dark">Topics</div>
 					<h1>TypeScript</h1>
-					<h3>...</h3>
-					<h3>...</h3>
-					<h3>...</h3>
+					<h3>what it is and why it's important</h3>
+					<h3>features it adds to your ES2015 javascript</h3>
+					<h3>demo of adding it to an existing project</h3>
 				</section>
 
 				<section data-background="img/bg-2.png" data-background-size="cover">
@@ -315,10 +315,19 @@ alert("2π = " + sum(pi, pi));
 					</aside>
 				</section>
 
+				<section data-background="#ffffff" data-background-size="cover">
+					<img src="img/ts-js.png" class="noBorder" />
+					<aside class="notes">
+						TypeScript is unique, compared to other languages that compile to JavaScript. Plain JavaScript IS VALID TYPESCRIPT. You can just change you .js files to .ts files, send them though the TypeScript compiler, and it will work fine. In this way JavaScript BUILD on the success of JavaScript, while improving on some aspects.
+
+						** inspiration for some of these comments, and more good information, can be found at http://stackoverflow.com/a/35048303
+					</aside>
+				</section>
+
 				<section data-background="img/bg-5.png" data-background-size="cover">
 					<p>
-						<img src="img/sitepen.png"  style="background:white; border:none; box-shadow:none;padding:10px; vertical-align: middle;margin-right: 20px;" />
-						<img src="img/angular-logo.png"  style="background:none; border:none; box-shadow:none; width: 250px; vertical-align: middle;" />
+						<img src="img/sitepen.png"  class="noBorder" style="background:white; padding:10px; vertical-align: middle;margin-right: 20px;" />
+						<img src="img/angular-logo.png" class="noBorder" style="width: 250px; vertical-align: middle;" />
 					</p>
 					<aside class="notes">
 						Many projects and companies are using Typescript. Sitepen is using Typescript to develop Dojo 2, the new version of Dojo. This doesn't mean you must develop your applications in Typescript -- simply that they are writing the underlying toolkit code in Typescript. AngularJS, a popular JavaScript Framework, has chosen to focus on Typescript for Angular 2, which is currently in beta and will be out soon - so unlike Dojo, if you're going to use Angualar2, you pretty much need to be using Typescript in your applications.
@@ -346,7 +355,7 @@ function buildName(firstName: string, lastName: string) {
 }
 					</code></pre>
 					<aside class="notes">
-						 All of the ES2015 code styles we've been showing so far still apply in the TypeScript world. But you can add things that help you be more efficient. One example is type annotations on functions. This is actually where TypeScript gets its name - we're taking JavaScript, a language where variable and function return types are NOT declared, and we're adding TYPES. The compiler enforces the types that you set. The syntax is quite simple - you can see in this example, you just put a colon after the function argument name, and define what type it is. The types that TypeScript support include all the JavaScript types, plus enum, "any", and void. Let's see these types in action [DEMO].
+						 All of the ES2015 code styles we've been showing so far still apply in the TypeScript world. But you can add things that help you be more efficient. One example is type annotations on functions. ... As we know, JavaScript is dynamically typed. This means JavaScript does not know what type a variable is until it is actually instantiated at run-time, but that is often too late and causes an error. TypeScript adds type support to JavaScript. Bugs that are caused by false assumptions of some variable being of a certain type can be completely eradicated if you use TypeScript Type Annotations. ... The syntax is quite simple - you can see in this example, you just put a colon after the function argument name, and define what type it is. The types that TypeScript support include all the JavaScript types, plus enum, "any", and void. Let's see these types in action [DEMO].
 					</aside>
 				</section>
 
@@ -445,6 +454,13 @@ document.body.innerHTML = greeter(user);
 					</code></pre>
 					<aside class="notes">
 						One of the most fundamental patterns in class-based programming is being able to extend existing classes to create new ones using inheritance. In TypeScript, this is done via the "extends" keyword. In this example we have a class, President, and a class that extends that class, EsriPresident.  This class does everything that the original does, except it also takes a "favorite map projection". Now in the code below, we can use the property from the based class (fullname) and the property from the extended class (favoriteMapProjection). .... Now lets see a quick demo of Classes and Inheritance in TypeScript in action.
+					</aside>
+				</section>
+
+				<section data-background="img/bg-7.png" data-background-size="cover">
+					<img src="img/drake-shrug.gif" class="noBorder" />
+					<aside class="notes">
+						So you may be asking yourself, SHOULD I jump in on the TypeScript bandwagon? If you're looking at the amount of risk, you probably have 2 extremes, on one extreme is just using ES2015 and a transpiler like Babel (like we talked about in the first half of the talk). This is the least risky - you know that JavaScript will be supported for a really long time. On the other side are languages totally different from JavaScript, like Dart, Elm, etc - these have great features, but are riskier in that they don't have a guaranteed rate of adoption. TypeScript is in the middle - it adds some great features if you're looking for them, all while being a superset of JavaScript. That, and the fact that 2015/2016 seem like big years for TypeScript adoption, make your devision to try TypeScript a really great one for your next project!
 					</aside>
 				</section>
 
