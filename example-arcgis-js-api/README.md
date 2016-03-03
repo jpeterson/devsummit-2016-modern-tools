@@ -4,6 +4,7 @@ To run:
 
 ```
 npm install
-bower install (pulls dojo and jsapi into 'dist' folder)
+grunt init
 grunt
+grunt build
 ```
