@@ -1,0 +1,22 @@
+{
+  "name": "example-browserify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gruntfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "babelify": "^7.2.0",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^4.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^3.3.0",
+    "watchify": "^3.7.0"
+  },
+  "scripts": {
+    "dev": "watchify src/index.js -o dist/bundle.js -d -v -t [ babelify --presets [ es2015 ] ]"
+  },
+  "author": "",
+  "license": "ISC"
+}

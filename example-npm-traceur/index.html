@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>npm Demo</title>
+  </head>
+  <body>
+    <h1>ES2015 + Traceur</h1>
+    <button onclick="addText()">Say Hello...</button>
+    <script src="node_modules/traceur/bin/traceur-runtime.js"></script>
+    <script type="text/javascript" src="dist/bundle.js"></script>
+    <script type="text/javascript">
+      function addText() {
+        var myApp = new App('Bingo');
+        var text = document.createTextNode(myApp.sayHello('Josh'));
+        document.body.appendChild(text);
+      }
+    </script>
+  </body>
+</html>

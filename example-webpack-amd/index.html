@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Webpack Demo</title>
+  </head>
+  <body>
+    <h1>ES2015 + Webpack (AMD)</h1>
+    <button id="sayHello">Say Hello...</button>
+
+    <!-- <script type="text/javascript" src="dist/bundle.js"></script> -->
+    <script type="text/javascript">
+      var dojoConfig = {
+        async: true,
+        packages: [{
+          name: 'dist',
+          location: location.pathname.replace(/[^\/]+$/, '') + 'dist'
+          }]
+      };
+    </script>
+    <script src="https://js.arcgis.com/3.15/"></script>
+    <script type="text/javascript">
+      require(["dist/bundle", "dojo/dom", "dojo/on", "dojo/domReady!"], function(App, dom, on) {
+        on(dom.byId('sayHello'), 'click', function() {
+          var myApp = new App.default('Bingo');
+          var text = document.createTextNode(myApp.sayHello('Gavin'));
+          document.body.appendChild(text);
+        });
+      });
+    </script>
+  </body>
+</html>
