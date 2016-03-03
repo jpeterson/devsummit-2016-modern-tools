@@ -5,10 +5,6 @@ module.exports = function(grunt) {
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
-  // Run code quality tools on all JS files in
-  // the /src/web/application folder and libs folders
-  var jsFiles = ['src/web/app/**/*.js'];
-
   grunt.initConfig({
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,7 +41,6 @@ module.exports = function(grunt) {
       },
     },
 
-    // this copies over index.html and replaces
     // the perl regexp section of build.sh in the dojo boilerplate
     'string-replace': {
       index: {
@@ -95,14 +90,9 @@ module.exports = function(grunt) {
         expand: true // required when using cwd
       },
     },
-
-    // End of Task Config
-
   });
 
-  grunt.registerTask('init', 'Run this task to perform any setup necessary.', ['shell:bowerInstall']);
-  grunt.registerTask('serve', 'Spin up a server and open the app in a browser.', ['sass:dev', 'postcss:dev', 'connect', 'watch']);
-  grunt.registerTask('quality', 'Run code quality tasks', ['test', 'jscs']);
+  grunt.registerTask('init', ['shell:bowerInstall']);
   grunt.registerTask('build', ['default', 'clean:build', 'dojo', 'string-replace']);
   grunt.registerTask('default', ['clean:dist', 'babel:dev', 'copy:dev']);
 };
