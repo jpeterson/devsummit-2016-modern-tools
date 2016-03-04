@@ -305,7 +305,7 @@ alert("2π = " + sum(pi, pi));
 						<div style="clear:both"></div>
 					</div>
 					<aside class="notes">
-						A transpiler, short for "source-to-source compiler", is a tool that takes the source code of a program written in one programming language as its input and produces the equivalent source code in another programming language. So as of today, to be able to write ES2015 code but have it work on all the browsers out there, we must TRANSPILE our code to the older ES5 standard. We can do that using multiple tools, including Babel, Traceur, and event Typescript, which we'll talk about later in this talk.
+						A transpiler, short for "source-to-source compiler", is a tool that takes the source code of a program written in one programming language as its input and produces the equivalent source code in another programming language. So as of today, to be able to write ES2015 code but have it work on all the browsers out there, we must TRANSPILE our code to the older ES5 standard. We can do that using multiple tools, including Babel, Traceur, and even Typescript, which we'll talk about later in this talk.
 					</aside>
 				</section>
 
@@ -348,7 +348,7 @@ alert("2π = " + sum(pi, pi));
 					  </g>
 					</svg>
 					<aside class="notes">
-						Typescript is a superset of JavaScript, providing features on top of JavaScript that can help you code more efficiently. Let's get a show of hands - who here has used TypeScript on a project before? Who has not? So my promise for this half of the talk is to give you the tools to enable TypeScript TODAY in your project.
+						Typescript is a superset of JavaScript, providing features on top of JavaScript that can help you code more efficiently. Let's get a show of hands - who here has used TypeScript on a project before? Who has not? So my promise for this half of the talk is to give you the tools to enable you to use TypeScript in your projects TODAY!
 
 						<!-- Typescript has been around for a few years, and in the early days was a competitor to Google Dart. Google Dart was going to be a NEW web programming language though, where Typescript took a less radical approach than dart - to be totally compatible with plain JavaScript out-of-the-box, and that has been one of the main reasons it has won out in popularity. -->
 					</aside>
@@ -357,7 +357,7 @@ alert("2π = " + sum(pi, pi));
 				<section data-background="#ffffff" data-background-size="cover">
 					<img src="img/ts-js.png" class="noBorder" />
 					<aside class="notes">
-						TypeScript is unique, compared to other languages that compile to JavaScript. Plain JavaScript IS VALID TYPESCRIPT. You can just change your .js files to .ts files, send them though the TypeScript compiler, and it will work fine. In this way TypeScript BUILDS on the success of JavaScript, while improving on some aspects.
+						TypeScript is unique, compared to other languages that compile to JavaScript. Plain JavaScript IS VALID TYPESCRIPT. You can just change the file extension from js to ts, send them though the TypeScript compiler, and it will work fine. In this way TypeScript BUILDS on the success of JavaScript, while improving on some aspects.
 
 						** inspiration for some of these comments, and more good information, can be found at http://stackoverflow.com/a/35048303
 					</aside>
@@ -395,7 +395,7 @@ function buildName(firstName: string, lastName: string) {
 					</code></pre>
 					<a href="img/demo0.mp4" target="_blank"><i class="fa fa-rocket"></i></a>
 					<aside class="notes">
-						 All of the ES2015 code styles we've been showing so far still apply in the TypeScript world. But you can add things that help you be more efficient. One example is type annotations on functions. ... As we know, JavaScript is dynamically typed. This means JavaScript does not know what type a variable is until it is actually instantiated at run-time, but that is often too late and causes an error. TypeScript adds type support to JavaScript. Bugs that are caused by false assumptions of some variable being of a certain type can be completely avoided if you use Type Annotations. ... The syntax is quite simple - you can see in this example, you just put a colon after the function argument name, and define what type it is. The types that TypeScript support include all the JavaScript types, plus enum, "any", and void. Let's see these types in action [DEMO].<br />https://gist.github.com/gavinr/710dcc803ff646218ea6
+						 All of the ES2015 code styles we've been showing so far still apply in the TypeScript world. But you can add things that help you be more efficient. One example is type annotations on functions. ... As we know, JavaScript is dynamically typed. This means JavaScript does not know what type a variable is until it is actually instantiated at run-time, but that is often too late and causes an error. TypeScript adds type support to JavaScript. Bugs that are caused by false assumptions of some variable being of a certain type can be completely avoided if you use Type Annotations. ... The syntax is quite simple - you can see in this example, you just put a colon after the function parameter, and define what type it is. The types that TypeScript support include all the JavaScript types, plus enum, "any", and void. Let's see these types in action [DEMO].<br />https://gist.github.com/gavinr/710dcc803ff646218ea6
 					</aside>
 				</section>
 
@@ -403,7 +403,7 @@ function buildName(firstName: string, lastName: string) {
 					<h2>Interfaces</h2>
 					<p><img src="img/duck.png" style="background:none; border:none; box-shadow:none;" /></p>
 					<aside class="notes">
-						 One of TypeScript's core principles is that type-checking focuses on the 'shape' that values have. This is called "duck typing", named after the classic expression "If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck." So if Typscript is just looking at the "shape" of values when determining type, naming them would make things easier. That's what interfaces are.
+						 One of TypeScript's core principles is that type-checking focuses on the 'shape' that values have. This is called "duck typing", named after the classic expression "If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck." So if Typscript is just looking at the "shape" of values when determining type, giving names to particular structures would make things easier. That's what interfaces are.
 						 <br /><br />image via https://pixabay.com/en/bath-duck-rubber-duckies-duck-199927/
 					</aside>
 				</section>
@@ -435,7 +435,7 @@ var user = {firstname: "Jack", lastname: "Dangermond"};
 document.body.innerHTML = greeter(user);
 					</code></pre>
 					<aside class="notes">
-						 In this example, if you look at the very first line, we have a function, "greeter", that takes a single parameter, "person", which is an object that has a few properties in it. Because we're in TypeScript, if you tried to call this function with an object that didn't match those properties (firstname and lastname), the compiler would give you an error. To make our code more reusbable and readable, let's turn that parameter into an interface. In the second code block, you see that we are defining an interface using the "interface" keyword, calling it "Person" and defining our object. Then in our function definition instead of putting the full object in the parameters list, we can just put the name of our interface. So clean!
+						 In this example, if you look at the very first line, we have a function, "greeter", that takes a single parameter, "person", which is an object that has a few properties in it. Because we're in TypeScript, if you tried to call this function with an object that didn't match those properties (firstname and lastname), the compiler would give you an error. To make our code more reusable and readable, let's turn that parameter into an interface. In the second code block, you see that we are defining an interface using the "interface" keyword, calling it "Person" and defining our object. Then in our function definition instead of putting the full object in the parameters list, we can just put the name of our interface. So clean!
 					</aside>
 				</section>
 
@@ -493,14 +493,14 @@ var user = new EsriPresident("Jack", "WebMercator");
 document.body.innerHTML = greeter(user);
 					</code></pre>
 					<aside class="notes">
-						One of the most fundamental patterns in class-based programming is being able to extend existing classes to create new ones using inheritance. In TypeScript, this is done via the "extends" keyword. In this example we have a class, President, and a class that extends that class, EsriPresident.  This class does everything that the original does, except it also takes a "favorite map projection". Now in the code below, we can use the property from the base class (fullname) and the property from the extended class (favoriteMapProjection). .... There are a bunch of other great features too - like function overloading, generics (type variables), mixins, declaration merging - all funtionality not in es6! But rather than give some boring demos of those functions, for our last demo I'm going to show you something you can do TODAY to in your favorite web project - convert it to use Typescript!
+						One of the most fundamental patterns in class-based programming is being able to extend existing classes to create new ones using inheritance. In TypeScript, this is done via the "extends" keyword. In this example we have a class, President, and a class that extends that class, EsriPresident.  This class does everything that the original does, except it also takes a "favorite map projection". Now in the code below, we can use the property from the base class (fullname) and the property from the extended class (favoriteMapProjection). .... There are a bunch of other great features too - like function overloading, generics (type variables), mixins, declaration merging - all functionality not in es6! But rather than give some boring demos of those functions, for our last demo I'm going to show you something you can do TODAY to in your favorite web project - convert it to use Typescript!
 					</aside>
 				</section>
 
 				<section data-background="img/bg-7.png" data-background-size="cover">
 					<img src="img/drake-shrug.gif" class="noBorder" />
 					<aside class="notes">
-						So you may be asking yourself, SHOULD I jump in on the TypeScript bandwagon? If you're looking at the amount of risk, you probably have 2 extremes, on one extreme is just using ES2015 and a transpiler like Babel (like we talked about in the first half of the talk). This is the least risky - you know that JavaScript will be supported for a really long time. On the other side are languages totally different from JavaScript, like Dart, Elm, etc - these have great features, but are riskier in that they don't have a guaranteed rate of adoption. TypeScript is in the middle - it adds some great features if you're looking for them, all while being a superset of JavaScript. That, and the fact that 2015/2016 seem like big years for TypeScript adoption, make your devision to try TypeScript a really great one for your next project!
+						So you may be asking yourself, SHOULD I jump in on the TypeScript bandwagon? If you're looking at the amount of risk, you probably have 2 extremes, on one extreme is just using ES2015 and a transpiler like Babel (like we talked about in the first half of the talk). This is the least risky - you know that JavaScript will be supported for a really long time. On the other side are languages totally different from JavaScript, like Dart, Elm, etc - these have great features, but are riskier in that they don't have a guaranteed rate of adoption. TypeScript is a great compromise - it adds some great features if you're looking for them, all while being a superset of JavaScript. That, and the fact that 2015/2016 seem like big years for TypeScript adoption, make your devision to try TypeScript a really great one for your next project!
 					</aside>
 				</section>
 
