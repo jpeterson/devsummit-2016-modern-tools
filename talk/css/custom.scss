@@ -24,4 +24,16 @@
     }
   }
 
+  table {
+    &.centercells {
+      tr td {
+        text-align: center;
+      }
+    }
+    &.noBorder {
+      td {
+        border: 0px;
+      }
+    }
+  }
 }
