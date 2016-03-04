@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <h1>ES2015 + Webpack (advanced)</h1>
+    <form onsubmit="api.getStuff(); return false;">
+      <p>
+        <input value="Get Photos From Sol:" type="submit" />
+        <input type="text" id="input" value="908" />
+        <span>(Try: 908 or 712)</span>
+      </p>
+    </form>
+    <textarea id="output"></textarea>
+    <div id="photos"></div>
+  </body>
+</html>

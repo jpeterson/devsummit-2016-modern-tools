@@ -1313,3 +1313,9 @@ html:-moz-full-screen-ancestor {
   border: 0px;
   background: transparent;
   box-shadow: none; }
+
+.reveal table.centercells tr td {
+  text-align: center; }
+
+.reveal table.noBorder td {
+  border: 0px; }
