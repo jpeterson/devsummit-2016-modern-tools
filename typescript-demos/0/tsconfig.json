@@ -1,5 +1,4 @@
 {
-    "buildOnSave": true,
     "compilerOptions": {
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
