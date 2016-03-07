@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Modern Tooling - Esri Dev Summit '16'</title>
+		<title>Modern Tooling - Esri Dev Summit 2016</title>
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -51,18 +51,11 @@
 
 				<section data-background="img/bg-4.png" data-background-size="cover">
 					<div class="slide-topic dark">Topics</div>
-					<h1>ES2015</h1>
-					<h3>what it is and why it's important</h3>
-					<h3>what you can do with it</h3>
-					<h3>how you can use it today</h3>
-				</section>
-
-				<section data-background="img/bg-4.png" data-background-size="cover">
-					<div class="slide-topic dark">Topics</div>
-					<h1>TypeScript</h1>
-					<h3>what it is and why it's important</h3>
-					<h3>features it adds to your ES2015 javascript</h3>
-					<h3>demo of adding it to an existing project</h3>
+					<h2>ES2015 &amp; TypeScript</h2>
+					<h4>What is it?</h4>
+					<h4>Why is it important?</h4>
+					<h4>What can I do with it?</h4>
+					<h4>How can I use it today?</h4>
 				</section>
 
 				<section data-background="img/bg-2.png" data-background-size="cover">
@@ -70,7 +63,7 @@
 				</section>
 
 				<section data-background="img/bg-1.png" data-background-size="cover">
-					<h3>First, some definitions:</h3>
+					<h3>What is it?</h3>
 					<dl>
 							<dt>ECMAScript</dt>
 							<dd>"The Language of the Web" (specification implemented by JS)</dd>
@@ -85,27 +78,37 @@
 				</section>
 
 				<section data-background="img/bg-1.png" data-background-size="cover">
-					<h2>Why ES2015 is important?</h2>
+					<h2>Why is ES2015 important?</h2>
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<p>JS is the language of the web</p>
-					<p>As JS becomes more powerful, frameworks become leaner</p>
-					<p>The history of web technology points to JS</p>
+					<h2>Because its JavaScript.</h2>
+					<small>which is the <strong>language of the web</strong>, remember?</small>
+					<p class="fragment"><em>Don't confuse ES2015 in the framework wars!</em></p>
 
 					<aside class="notes">
 						<p>JS isn't going anywhere anytime soon</p>
-						<p>It is important to know the language - not just abstractions (libs/frameworks)</p>
-						<p>Libs/frameworks rely more and more on plain JS.</p>
+						<p>ES2015 is not a framework. It is foundational.</p>
 					</aside>
+				</section>
+
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<h2>Modern frameworks are lean</h2>
+
+					<aside class="notes">
+						<p>Libs/frameworks rely more and more on plain JS.</p>
+						<p>Learn the language, not just libraries/frameworks.</p>
+					</aside>
+				</section>
+
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<h2>Let's look at some trends...</h2>
 				</section>
 
 				<section data-background="img/web-timeline-01.png" data-background-transition="slide-in none" data-background-size="cover" data-transition="slide-in fade-out">
 					<aside class="notes">
-						<p>A history of web technology (1995 - present)</p>
-						<p>We want to look at how far the web has come in 20 years</p>
+						<p>A history of web technology (last 20 years)</p>
 						<p>Let's focus in on a few of these segments</p>
-
 					</aside>
 				</section>
 
@@ -120,9 +123,11 @@
 				</section>
 
 				<section data-background="img/web-timeline-03.png" data-background-transition="none" data-background-size="cover" data-transition="none fade-out">
+					<iframe class="fragment" height="548px" width="1000px" src="https://github.com/tobytailor/gordon/wiki"></iframe>
+
 					<aside class="notes">
 						<p>The increasing power in browsers makes plugin-based tech obsolete</p>
-						<p>Why did these exist?</p>
+						<p>Why did these exist? Lack of power in browsers</p>
 						<p>Writing was on the wall as far back as 2010 (Tobias Schneider's (now at Spotify) "Gordon")
 							<a href="https://github.com/tobytailor/gordon/wiki" target="_blank">link</a>
 						</p>
@@ -133,7 +138,8 @@
 					<aside class="notes">
 						<p>Talks to how the JS community has evolved and reacted to a changing platform</p>
 						<p>Evolution of js frameworks and libraries (previously intended to fill language/platform gaps, now more focused, expect dev to leverage powerful language features)</p>
-						<p>dojo/jquery/mootools focused on providing utilities, angular/ember/react focus on app architecture and leverage es2015/TS</p>
+						<p>2005 dojo/jquery/mootools focused on providing utilities</p>
+						<p>angular/ember/react focus on app architecture and leverage es2015/TS</p>
 						<p>CoffeeScript is an interesting case - attempt at "smarter" js via transpilation, influenced ES Harmony</p>
 					</aside>
 				</section>
@@ -172,11 +178,11 @@
 				</section>
 
 				<section data-background="img/bg-1.png" data-background-size="cover">
-					<h2>What can ES2015 do for me?</h2>
+					<h2>What can I do with it?</h2>
 				</section>
 
-				<section data-background="img/bg-1.png" data-background-size="cover">
-					<h3>A few of my favorite (ES2015) things...</h3>
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<h4>A few of my favorite (ES2015) things...</h4>
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
@@ -207,7 +213,7 @@ var p = new Person();
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<p>Promises + Arrow Functions = Syntactical Awesomeness</p>
+					<p>Promises + Arrows = Syntactical Awesomeness</p>
 					<pre><code data-trim>
 function makeRequest() {
   return new Promise((resolve, reject) => {
@@ -230,6 +236,13 @@ makeRequest.then(response => {
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
 					<p>Template Strings</p>
+					<div style="text-align:left">ES5</div>
+					<pre><code data-trim>
+sayHello(person) {
+	return 'Whats up' + person + '!';
+}
+					</code></pre>
+					<div style="text-align:left">ES2015</div>
 					<pre><code data-trim>
 sayHello(person) {
   return `Whats up ${person}!`;
@@ -242,26 +255,43 @@ totally legal!`
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
 					<p>Modules</p>
+					<div style="text-align:left">lib/math.js</div>
 					<pre><code data-trim>
-//
-// lib/math.js
-//
 export function sum(x, y) {
-  return x + y;
+	return x + y;
 }
 export var pi = 3.141593;
+					</code></pre>
+					<div style="text-align:left">app.js</div>
+					<pre><code data-trim>
+import * as math from 'lib/math';
+alert('2π = ' + math.sum(math.pi, math.pi));
+					</code></pre>
+					<div style="text-align:left">otherApp.js</div>
+					<pre><code data-trim>
+import { sum, pi } from 'lib/math';
+alert('2π = ' + sum(pi, pi));
+					</code></pre>
+				</section>
 
-//
-// app.js
-//
-import * as math from "lib/math";
-alert("2π = " + math.sum(math.pi, math.pi));
+				<section data-background="img/bg-5.png" data-background-size="cover">
+					<p>Classes + Inheritance</p>
+					<pre><code data-trim>
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
 
-//
-// otherApp.js
-//
-import {sum, pi} from "lib/math";
-alert("2π = " + sum(pi, pi));
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(${this.name} barks.`);
+  }
+}
 					</code></pre>
 				</section>
 
@@ -274,7 +304,9 @@ alert("2π = " + sum(pi, pi));
 					</aside>
 				</section>
 
-
+				<section data-background="img/bg-1.png" data-background-size="cover">
+					<h2>How can I use it today?</h2>
+				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover" data-transition="slide-in fade-out">
 					<img src="img/group-happy.gif" style="background:none; border:none; box-shadow:none;" data-transition-speed="fast" />
@@ -326,10 +358,15 @@ alert("2π = " + sum(pi, pi));
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<h1>demo</h1>
-					<aside class="notes">
-						remember to include in webpack demo... ".eslintrc: teach it es6 by using babel-eslint parser"
-					</aside>
+					<h1>ES2015 Demos</h1>
+					<ul>
+						<li><a target="_blank" href="../1-example-traceur-npm">Traceur</a></li>
+						<li><a target="_blank" href="../2-example-babel-npm">Babel + NPM Scripts</a></li>
+						<li><a target="_blank" href="../3-example-babel-browserify">Babel + Browserify</a></li>
+						<li><a target="_blank" href="../4-example-babel-webpack">Babel + Webpack</a></li>
+						<li><a target="_blank" href="../5-example-babel-webpack-advanced">Babel + Webpack (advanced)</a></li>
+						<li><a target="_blank" href="../6-example-babel-dojo">Babel + Grunt + Dojo Build</a></li>
+					</ul>
 				</section>
 
 				<section data-background="#ffffff" data-background-size="cover">

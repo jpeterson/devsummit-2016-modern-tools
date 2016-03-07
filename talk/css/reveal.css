@@ -1297,6 +1297,9 @@ html:-moz-full-screen-ancestor {
 .zoomed .reveal .roll span:after {
   visibility: hidden; }
 
+.reveal strong {
+  color: #0787c9; }
+
 .reveal dl dt {
   padding-top: 30px; }
 
