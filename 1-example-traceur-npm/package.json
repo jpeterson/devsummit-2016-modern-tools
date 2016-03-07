@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node .\\node_modules\\traceur\\src\\node\\command.js --out dist\\bundle.js --script src\\app.js"
+    "build": "node ./node_modules/traceur/src/node/command.js --out dist/bundle.js --script src/app.js"
   },
   "author": "",
   "license": "ISC",
