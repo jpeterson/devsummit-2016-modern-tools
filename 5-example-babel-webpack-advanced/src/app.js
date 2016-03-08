@@ -15,13 +15,6 @@ export default class DomStuff {
 }
 
 const api = {
-  addText: () => {
-    const myApp = new App('Future');
-    const name = $('#input').value;
-    const text = document.createTextNode(myApp.sayHello(name));
-    document.body.appendChild(text);
-  },
-
   getStuff: (e) => {
     $('#photos').empty();
     const request = makeRequest({

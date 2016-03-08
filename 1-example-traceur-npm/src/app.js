@@ -7,3 +7,5 @@ class App {
     return `Whats up ${person}! My name is ${this.name}`;
   }
 }
+
+window.App = App;
