@@ -150,7 +150,7 @@
 					<img src="img/ember.png" style="background:none; border:none; box-shadow:none;height:150px" />
 					<p>Ember's approach to ES2015 (use modules)</p>
 					<img width="1000px" src="img/ember-classes.png" style="background:none; border:none; box-shadow:none;" />
-					<small><a href="https://guides.emberjs.com/v2.0.0/controllers/">https://guides.emberjs.com/v2.0.0/controllers/</a></small>
+					<small><a target="_blank" href="https://guides.emberjs.com/v2.0.0/controllers/">https://guides.emberjs.com/v2.0.0/controllers/</a></small>
 
 					<aside class="notes">
 						Ember uses ES2015 import/export, but still has its own mechanism for creating classes
@@ -161,7 +161,7 @@
 					<img src="img/react.png" style="background:none; border:none; box-shadow:none;height:150px" />
 					<p>React's approach to ES2015 (use modules + classes)</p>
 					<img width="1000px" src="img/react-classes.png" />
-					<small><a href="https://facebook.github.io/react/docs/reusable-components.html#es6-classes">https://facebook.github.io/react/docs/reusable-components.html#es6-classes</a></small>
+					<small><a target="_blank" href="https://facebook.github.io/react/docs/reusable-components.html#es6-classes">https://facebook.github.io/react/docs/reusable-components.html#es6-classes</a></small>
 
 					<aside class="notes">
 						React not only uses import/export, but also supports native ES2015 classes
@@ -172,7 +172,7 @@
 					<img src="img/react.png" style="background:none; border:none; box-shadow:none;height:150px" />
 					<p>React's philosophy</p>
 					<img width="1000px" src="img/react-es6.png" />
-					<small><a href="https://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html#plain-javascript-classes">https://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html#plain-javascript-classes</a></small>
+					<small><a target="_blank" href="https://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html#plain-javascript-classes">https://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html#plain-javascript-classes</a></small>
 
 					<aside class="notes">
 						Maybe more important than a code snippet is React's philosophy with regard to "Idiomatic JS", aka native JS
@@ -212,6 +212,9 @@ function Person(){
 
 var p = new Person();
 					</code></pre>
+					<aside class="notes">
+						Arrow functions pass scope (lexical scoping). No more lang.hitch!
+					</aside>
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
@@ -234,6 +237,9 @@ makeRequest.then(response => {
   return response;
 })
 					</code></pre>
+					<aside class="notes">
+						Promises + Arrow functions makes for a nice syntax.
+					</aside>
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
@@ -253,6 +259,9 @@ sayHello(person) {
 let comment = `In ES2015 this is
 totally legal!`
 					</code></pre>
+					<aside class="notes">
+						ES2015 makes it easier to work with strings - much like lang.replace (but native!)
+					</aside>
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
@@ -274,6 +283,9 @@ alert('2π = ' + math.sum(math.pi, math.pi));
 import { sum, pi } from 'lib/math';
 alert('2π = ' + sum(pi, pi));
 					</code></pre>
+					<aside class="notes">
+						Modules will eventually eliminate the need for AMD or CommonJS
+					</aside>
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
@@ -295,6 +307,9 @@ class Dog extends Animal {
   }
 }
 					</code></pre>
+					<aside class="notes">
+						Object Oriented Programming without a framework to do the heavy lifting!
+					</aside>
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
@@ -516,6 +531,7 @@ document.body.innerHTML = cat.name; // Error: 'name' is private;
 						<li>Optional properties and arguments</li>
 						<li>Function overloads</li>
 					</ul>
+					<br />
 					<a href="video-player/?video=demo1.mp4&targetTimes=0,22,34,47,55,91,128,174,215,285,316,370" target="_blank"><i class="fa fa-rocket"></i></a>
 					<aside class="notes">
 						And TypeScript has even more features that don't yet exist in ES6 or beyond (although some of them may be in a future version of JavaScript). We don't have time to go through examples of them all, so let's get into one last example where I can make good on my promise of showing you how to convert an actual web mapping app to TypeScript LIVE. [DEMO]

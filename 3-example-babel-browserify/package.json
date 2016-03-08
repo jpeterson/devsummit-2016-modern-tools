@@ -11,7 +11,7 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
-    "start": "watchify src/index.js -o dist/bundle.js -d -v -t [ babelify ]"
+    "build": "browserify src/index.js --outfile dist/bundle.js --transform [ babelify ]"
   },
   "author": "",
   "license": "ISC"
