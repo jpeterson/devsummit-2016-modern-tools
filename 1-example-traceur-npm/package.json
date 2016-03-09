@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "traceur --out dist/bundle.js --script src/app.js"
+    "build": "traceur --out dist/app.js --script src/app.js"
   },
   "author": "",
   "license": "ISC",
