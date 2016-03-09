@@ -217,30 +217,6 @@ var p = new Person();
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<p>Promises + Arrows = Syntactical Awesomeness</p>
-					<pre><code data-trim class="js">
-function makeRequest() {
-  return new Promise((resolve, reject) => {
-    $.ajax('config.json', {
-      success: (data, status, xhr) => {
-        resolve(data);
-      },
-      error: (xhr, status, error) => {
-        reject(error);
-      }
-    });
-  });
-}
-makeRequest.then(response => {
-  return response;
-})
-					</code></pre>
-					<aside class="notes">
-						Promises + Arrow functions makes for a nice syntax.
-					</aside>
-				</section>
-
-				<section data-background="img/bg-5.png" data-background-size="cover">
 					<p>Template Strings</p>
 					<div style="text-align:left"><small>ES5</small></div>
 					<pre><code data-trim class="js">
@@ -492,35 +468,9 @@ document.body.innerHTML = greet(user);
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<h2>Classes - Access Modifiers</h2>
-					<p>ES2015:</p>
-					<pre><code class="hljs" data-trim contenteditable>
-class Animal {
-	name;
-	constructor(theName) {
-		this.name = theName;
-	}
-}
-const cat = new Animal("Cat");
-document.body.innerHTML = cat.name;
-					</code></pre>
-					<p>TypeScript:</p>
-					<pre><code class="hljs" data-trim contenteditable>
-class Animal {
-	private name: string;
-	constructor(theName: string) { this.name = theName; }
-}
-const cat = new Animal("Cat");
-document.body.innerHTML = cat.name; // Error: 'name' is private;
-					</code></pre>
-					<aside class="notes">
-						In TypeScript you can use all the features of ES2015 Classes syntax. TypeScript does allow adding of "Access Modifiers (aka Public/Private modifiers)" additionally. Members of a class are public by default, but may be marked private. When a memer is marked private, it cannot be accessed from outside of its containing class. In our example, there is no way to prevent the code outside the class from accessing the name property in ES2015, but with TypeScript that line will recieve an error. More info: https://github.com/Microsoft/TypeScript-Handbook/blob/master/pages/Classes.md
-					</aside>
-				</section>
-
-				<section data-background="img/bg-5.png" data-background-size="cover">
 					<h2>Additional Features</h2>
 					<ul>
+						<li>Access Modifiers</li>
 						<li>Decorators</li>
 						<li>Abstract classes</li>
 						<li>Namespace (Module)</li>
@@ -590,7 +540,7 @@ document.body.innerHTML = cat.name; // Error: 'name' is private;
 							<a target="_blank" href="https://twitter.com/gavinrehkemper"><i class="fa fa-twitter" title="Twitter"></i>/gavinrehkemper</a>
 						</p>
 					</div>
-					<small>Please rate this session in the Esri Events mobile app!</small>
+					<small><a target="_blank" href="https://github.com/jpeterson/devsummit-2016-modern-tools">https://github.com/jpeterson/devsummit-2016-modern-tools</a></small>
 				</section>
 
 				<section data-background="img/end.png" data-background-size="cover"></section>
