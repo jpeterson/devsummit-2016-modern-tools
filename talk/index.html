@@ -44,7 +44,7 @@
 					<h3>for the modern web developer</h3>
 					<p>
 						<small>
-							Josh Peterson <a href="https://twitter.com/jm_peterson">@jm_peterson</a>  &nbsp; /  &nbsp; Gavin Rehkemper <a href="https://twitter.com/gavinr">@gavinrehkemper</a>
+							Josh Peterson <a target="_blank" href="https://twitter.com/jm_peterson">@jm_peterson</a>  &nbsp; /  &nbsp; Gavin Rehkemper <a target="_blank" href="https://twitter.com/gavinr">@gavinrehkemper</a>
 						</small>
 					</p>
 				</section>
@@ -86,7 +86,7 @@
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<h2>Because its JavaScript.</h2>
+					<h2>Because it's JavaScript.</h2>
 					<small>which is the <strong>language of the web</strong>, remember?</small>
 					<p class="fragment"><em>Don't confuse ES2015 in the framework wars!</em></p>
 
@@ -189,8 +189,8 @@
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
 					<p>Arrow Functions</p>
-					<div style="text-align:left">ES5</div>
-					<pre><code data-trim>
+					<div style="text-align:left"><small>ES5</small></div>
+					<pre style="margin-top:0"><code data-trim class="js">
 function Person() {
   var self = this; // might also dojo/_base/lang or $.proxy
   self.age = 0;
@@ -200,8 +200,8 @@ function Person() {
   }, 1000);
 }
 					</code></pre>
-					<div style="text-align:left">ES2015</div>
-					<pre><code data-trim>
+					<div style="text-align:left"><small>ES2015</small></div>
+					<pre style="margin-top:0"><code data-trim class="js">
 function Person(){
   this.age = 0;
 
@@ -209,7 +209,6 @@ function Person(){
     this.age++; // `this` refers to Person
   }, 1000);
 }
-
 var p = new Person();
 					</code></pre>
 					<aside class="notes">
@@ -219,7 +218,7 @@ var p = new Person();
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
 					<p>Promises + Arrows = Syntactical Awesomeness</p>
-					<pre><code data-trim>
+					<pre><code data-trim class="js">
 function makeRequest() {
   return new Promise((resolve, reject) => {
     $.ajax('config.json', {
@@ -232,7 +231,6 @@ function makeRequest() {
     });
   });
 }
-
 makeRequest.then(response => {
   return response;
 })
@@ -244,14 +242,14 @@ makeRequest.then(response => {
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
 					<p>Template Strings</p>
-					<div style="text-align:left">ES5</div>
-					<pre><code data-trim>
+					<div style="text-align:left"><small>ES5</small></div>
+					<pre><code data-trim class="js">
 sayHello(person) {
-	return 'Whats up' + person + '!';
+  return 'Whats up' + person + '!';
 }
 					</code></pre>
-					<div style="text-align:left">ES2015</div>
-					<pre><code data-trim>
+					<div style="text-align:left"><small>ES2015</small></div>
+					<pre><code data-trim class="js">
 sayHello(person) {
   return `Whats up ${person}!`;
 }
@@ -266,20 +264,20 @@ totally legal!`
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
 					<p>Modules</p>
-					<div style="text-align:left">lib/math.js</div>
-					<pre><code data-trim>
+					<div style="text-align:left"><small>lib/math.js</small></div>
+					<pre style="margin-top:0"><code data-trim class="js">
 export function sum(x, y) {
-	return x + y;
+  return x + y;
 }
 export var pi = 3.141593;
 					</code></pre>
-					<div style="text-align:left">app.js</div>
-					<pre><code data-trim>
+					<div style="text-align:left"><small>app.js</small></div>
+					<pre style="margin-top:0"><code data-trim class="js">
 import * as math from 'lib/math';
 alert('2π = ' + math.sum(math.pi, math.pi));
 					</code></pre>
-					<div style="text-align:left">otherApp.js</div>
-					<pre><code data-trim>
+					<div style="text-align:left"><small>otherApp.js</small></div>
+					<pre style="margin-top:0"><code data-trim class="js">
 import { sum, pi } from 'lib/math';
 alert('2π = ' + sum(pi, pi));
 					</code></pre>
@@ -290,7 +288,7 @@ alert('2π = ' + sum(pi, pi));
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
 					<p>Classes + Inheritance</p>
-					<pre><code data-trim>
+					<pre><code data-trim class="js">
 class Animal {
   constructor(name) {
     this.name = name;
@@ -303,7 +301,7 @@ class Animal {
 
 class Dog extends Animal {
   speak() {
-    console.log(${this.name} barks.`);
+    console.log(`${this.name} barks.`);
   }
 }
 					</code></pre>
@@ -340,7 +338,7 @@ class Dog extends Animal {
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<a href="https://kangax.github.io/compat-table/es6/"><img src="img/compat-table.png"  style="background:none; border:none; box-shadow:none;" /></a>
+					<a target="_blank" href="https://kangax.github.io/compat-table/es6/"><img src="img/compat-table.png"  style="background:none; border:none; box-shadow:none;" /></a>
 					<aside class="notes">
 						The ECMAScript Compatibility Table, a repository maintained on GitHub, has become the de-facto standard to see where we're at in the browser race to the ES2015 finish line. At the top you can see a quick summary of what what percent ES2015 coverage certain browsers and transpilers have. For example, Babel is at 73%, Traceur is at 60% and my current Browser, Chrome, is at 81%. The lower numbers really illustrate why we're talking about tooling today - likely a lot of the ES2015 code you write will be supported by the latest Chrome or FireFox browsers (they're in the 70s and 80s percent coverage), but if you need your code to work on older browsers - or even IE11 - you need to use a transpiler.
 					</aside>
@@ -349,8 +347,8 @@ class Dog extends Animal {
 				<section data-background="img/bg-5.png" data-background-size="cover">
 					<h2>So how can we use ES2015 <strong>today</strong>?</h2>
 					<div class="fragment">
-						<a href="https://babeljs.io/"><img src="img/babel.png" style="background:none; border:none; box-shadow:none; width: 49%; float: left; margin-top: 15%"/></a>
-						<a href="https://github.com/google/traceur-compiler"><img src="img/traceur.svg" style="background:none; border:none; box-shadow:none;  width: 49%; float: left"/></a>
+						<a target="_blank" href="https://babeljs.io/"><img src="img/babel.png" style="background:none; border:none; box-shadow:none; width: 49%; float: left; margin-top: 15%"/></a>
+						<a target="_blank" href="https://github.com/google/traceur-compiler"><img src="img/traceur.svg" style="background:none; border:none; box-shadow:none;  width: 49%; float: left"/></a>
 						<div style="clear:both"></div>
 					</div>
 					<aside class="notes">
@@ -560,6 +558,18 @@ document.body.innerHTML = cat.name; // Error: 'name' is private;
 					</aside>
 				</section>
 
+				<section data-background="img/bg-4.png" data-background-size="cover">
+					<table>
+						<tr>
+							<td style="border:0"><img src="img/rate-1.png" class="" style="height: 500px" /></td>
+							<td style="border:0"><img src="img/rate-2.png" class="" style="height: 500px" /></td>
+						</tr>
+						<tr>
+							<td colspan="2" style="text-align:center">Rate us!</td>
+						</tr>
+					</table>
+				</section>
+
 				<!--  							-->
 				<!-- 		THANK YOU		-->
 				<!--  							-->
@@ -569,18 +579,18 @@ document.body.innerHTML = cat.name; // Error: 'name' is private;
 					<div style="width:50%; float: left;">
 						<p>
 							<h3>Josh Peterson</h3>
-							<a href="https://github.com/jpeterson"><i class="fa fa-github" title="GitHub"></i>/jpeterson</a><br>
-							<a href="https://twitter.com/jm_peterson"><i class="fa fa-twitter" title="Twitter"></i>/jm_peterson</a>
+							<a target="_blank" href="https://github.com/jpeterson"><i class="fa fa-github" title="GitHub"></i>/jpeterson</a><br>
+							<a target="_blank" href="https://twitter.com/jm_peterson"><i class="fa fa-twitter" title="Twitter"></i>/jm_peterson</a>
 						</p>
 					</div>
 					<div style="width:50%; float: left;">
 						<p>
 							<h3>Gavin Rehkemper</h3>
-							<a href="https://github.com/gavinr"><i class="fa fa-github" title="GitHub"></i>/gavinr</a><br>
-							<a href="https://twitter.com/gavinrehkemper"><i class="fa fa-twitter" title="Twitter"></i>/gavinrehkemper</a>
+							<a target="_blank" href="https://github.com/gavinr"><i class="fa fa-github" title="GitHub"></i>/gavinr</a><br>
+							<a target="_blank" href="https://twitter.com/gavinrehkemper"><i class="fa fa-twitter" title="Twitter"></i>/gavinrehkemper</a>
 						</p>
 					</div>
-					<p>Please rate this session in the Esri Events mobile app!</p>
+					<small>Please rate this session in the Esri Events mobile app!</small>
 				</section>
 
 				<section data-background="img/end.png" data-background-size="cover"></section>
