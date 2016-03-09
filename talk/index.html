@@ -492,35 +492,9 @@ document.body.innerHTML = greet(user);
 				</section>
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
-					<h2>Classes - Access Modifiers</h2>
-					<p>ES2015:</p>
-					<pre><code class="hljs" data-trim contenteditable>
-class Animal {
-	name;
-	constructor(theName) {
-		this.name = theName;
-	}
-}
-const cat = new Animal("Cat");
-document.body.innerHTML = cat.name;
-					</code></pre>
-					<p>TypeScript:</p>
-					<pre><code class="hljs" data-trim contenteditable>
-class Animal {
-	private name: string;
-	constructor(theName: string) { this.name = theName; }
-}
-const cat = new Animal("Cat");
-document.body.innerHTML = cat.name; // Error: 'name' is private;
-					</code></pre>
-					<aside class="notes">
-						In TypeScript you can use all the features of ES2015 Classes syntax. TypeScript does allow adding of "Access Modifiers (aka Public/Private modifiers)" additionally. Members of a class are public by default, but may be marked private. When a memer is marked private, it cannot be accessed from outside of its containing class. In our example, there is no way to prevent the code outside the class from accessing the name property in ES2015, but with TypeScript that line will recieve an error. More info: https://github.com/Microsoft/TypeScript-Handbook/blob/master/pages/Classes.md
-					</aside>
-				</section>
-
-				<section data-background="img/bg-5.png" data-background-size="cover">
 					<h2>Additional Features</h2>
 					<ul>
+						<li>Access Modifiers</li>
 						<li>Decorators</li>
 						<li>Abstract classes</li>
 						<li>Namespace (Module)</li>
