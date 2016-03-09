@@ -45,7 +45,7 @@ module.exports = {
 
     // Build an 'index.html' file in /prod (using a template)
     new HtmlWebpackPlugin({
-      title: 'ES2015 + Webpack (advanced)',
+      title: '6 - Webpack Demo (Advanced)',
       template: 'index.ejs', // Load a custom template
       inject: 'body'
     })
