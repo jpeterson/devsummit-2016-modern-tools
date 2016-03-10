@@ -450,8 +450,8 @@ function greet(name: string, age: number) {
 
 				<section data-background="img/bg-5.png" data-background-size="cover">
 					<h2>Interfaces</h2>
-					<p>TypeScript (no interface):</p>
-					<pre><code class="hljs" data-trim contenteditable>
+					<small>TypeScript (no interface):</small>
+					<pre style="margin-top:0"><code class="hljs" data-trim contenteditable>
 function greet(person : {name: string, age: number}) {
     return `Hello,  ${person.name}, you are ${person.age} years of age.`;
 }
@@ -459,8 +459,8 @@ function greet(person : {name: string, age: number}) {
 var user = {name: "Jack White", age: 40};
 document.body.innerHTML = greet(user);
 					</code></pre>
-					<p>TypeScript:</p>
-					<pre><code class="hljs" data-trim contenteditable>
+					<small>TypeScript:</small>
+					<pre style="margin-top:0"><code class="hljs" data-trim contenteditable>
 interface Person {
     name: string;
     age: number;
@@ -469,9 +469,6 @@ interface Person {
 function greet(person : Person) {
     return `Hello,  ${person.name}, you are ${person.age} years of age.`;
 }
-
-var user = {name: "Jack White", age: 40};
-document.body.innerHTML = greet(user);
 					</code></pre>
 					<aside class="notes">
 						 In this example, if you look at the very first line, we have a function, "greeter", that takes a single parameter, "person", which is an object that has a few properties in it. Because we're in TypeScript, if you tried to call this function with an object that didn't match those properties (firstname and lastname), the compiler would give you an error. To make our code more reusable and readable, let's turn that parameter into an interface. In the second code block, you see that we are defining an interface using the "interface" keyword, calling it "Person" and defining our object. Then in our function definition instead of putting the full object in the parameters list, we can just put the name of our interface. So clean!
