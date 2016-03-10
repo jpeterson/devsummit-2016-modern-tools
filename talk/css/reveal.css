@@ -1298,19 +1298,10 @@ html:-moz-full-screen-ancestor {
   visibility: hidden; }
 
 .reveal strong {
-  color: #0787c9; }
+  color: #34B6B1; }
 
 .reveal dl dt {
   padding-top: 30px; }
-
-.reveal .slide-topic {
-  position: absolute;
-  border-bottom: 2px solid #555;
-  padding-bottom: 10px;
-  color: #0787c9; }
-  .reveal .slide-topic.dark {
-    border-bottom: 2px solid #ddd;
-    color: #ddd; }
 
 .reveal section img.noBorder {
   border: 0px;
